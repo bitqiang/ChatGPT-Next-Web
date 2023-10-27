@@ -1,11 +1,11 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const it: LocaleType = {
+const it: PartialLocaleType = {
   WIP: "Work in progress...",
   Error: {
     Unauthorized:
-      "Accesso non autorizzato, inserire il codice di accesso nella pagina delle impostazioni.",
+      "Accesso non autorizzato, inserire il codice di accesso nella [pagina](/#/auth) delle impostazioni.",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} messaggi`,
@@ -61,32 +61,20 @@ const it: LocaleType = {
   Settings: {
     Title: "Impostazioni",
     SubTitle: "Tutte le impostazioni",
-    Actions: {
-      ClearAll: "Cancella tutti i dati",
-      ResetAll: "Resetta tutte le impostazioni",
-      Close: "Chiudi",
-      ConfirmResetAll: "Sei sicuro vuoi cancellare tutte le impostazioni?",
-      ConfirmClearAll: "Sei sicuro vuoi cancellare tutte le chat?",
-    },
+
     Lang: {
-      Name: "Lingue",
-      All: "All Languages",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-      },
+      Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
+      All: "Tutte le lingue",
     },
     Avatar: "Avatar",
     FontSize: {
       Title: "Dimensione carattere",
       SubTitle: "Regolare la dimensione dei caratteri del contenuto della chat",
+    },
+    InjectSystemPrompts: {
+      Title: "Inserisci Prompts di Sistema",
+      SubTitle:
+        "Aggiungi forzatamente un prompt di sistema simulato di ChatGPT all'inizio della lista dei messaggi per ogni richiesta",
     },
     Update: {
       Version: (x: string) => `Versione: ${x}`,
@@ -104,8 +92,10 @@ const it: LocaleType = {
       SubTitle: "Preview markdown in bubble",
     },
     Mask: {
-      Title: "Mask Splash Screen",
-      SubTitle: "Show a mask splash screen before starting new chat",
+      Splash: {
+        Title: "Mask Splash Screen",
+        SubTitle: "Show a mask splash screen before starting new chat",
+      },
     },
     Prompt: {
       Disable: {
@@ -163,10 +153,15 @@ const it: LocaleType = {
       Title: "Token massimi",
       SubTitle: "Lunghezza massima dei token in ingresso e dei token generati",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Penalità di presenza",
       SubTitle:
         "Un valore maggiore aumenta la probabilità di parlare di nuovi argomenti",
+    },
+    FrequencyPenalty: {
+      Title: "Penalità di frequenza",
+      SubTitle:
+        "Un valore maggiore che diminuisce la probabilità di ripetere la stessa riga",
     },
   },
   Store: {
@@ -195,6 +190,9 @@ const it: LocaleType = {
   },
   Plugin: {
     Name: "Plugin",
+  },
+  FineTuned: {
+    Sysmessage: "Sei un assistente che",
   },
   Mask: {
     Name: "Mask",
@@ -239,6 +237,12 @@ const it: LocaleType = {
     Close: "Close",
     Create: "Create",
     Edit: "Edit",
+  },
+  Exporter: {
+    Model: "Modello",
+    Messages: "Messaggi",
+    Topic: "Argomento",
+    Time: "Tempo",
   },
 };
 
