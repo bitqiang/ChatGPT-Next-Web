@@ -32,8 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="config" content={JSON.stringify(getClientConfig())} />
-        <meta
-            http-equiv="Content-Security-Policy" content="default-src 'self' *.mailsite.com *.vercel-insights.com; img-src *" />
+        <meta http-equiv="Content-Security-Policy" content="*" />
         <link rel="manifest" href="/site.webmanifest"></link>
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
